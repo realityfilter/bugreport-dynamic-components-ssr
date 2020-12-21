@@ -1,4 +1,17 @@
-# loadingbug
+# dynamic components ssr bug
+
+The server side rendered html is missing class and style attributes set on parent
+component for dynamically imported children.
+
+This is how it should look like: ![correct](./static/correct.png)
+
+This is how how the server side rendered html looks like: ![ssr](./static/ssr.png)
+
+## possible workarounds
+
+- avoiding async imports via manual registering the components in a plugin
+- wrapping the DynamicComponent within a div
+- using `:key` inside DynamicComponent
 
 ## Build Setup
 
